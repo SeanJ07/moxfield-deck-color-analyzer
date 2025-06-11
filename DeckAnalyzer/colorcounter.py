@@ -60,14 +60,26 @@ def count_colors_in_deck(filename):
 
     return land_counts, nonland_counts, total_lands, total_nonlands
 
+def print_analysis(land_counts, nonland_counts, total_lands, total_nonlands):
+    print("\n=== Land Mana Production Analysis ===")
+    for color in COLOR_MAP.values():
+        count = land_counts[color]
+        percent = (count / total_lands * 100) if total_lands else 0
+        print(f"{color:6}: {count:3} out of {total_lands} lands ({percent:.1f}%)")
+
+    print("\n=== Nonland Card Color Identity Analysis ===")
+    for color in COLOR_MAP.values():
+        count = nonland_counts[color]
+        percent = (count / total_nonlands * 100) if total_nonlands else 0
+        print(f"{color:6}: {count:3} out of {total_nonlands} nonlands ({percent:.1f}%)")
+
 def main():
     filename = input("Enter the path to your downloaded Moxfield .txt decklist: ")
     try:
         land_counts, nonland_counts, total_lands, total_nonlands = count_colors_in_deck(filename)
-        for color in COLOR_MAP.values():
-            print(f"{land_counts[color]} out of {total_lands} lands produce {color.lower()} mana")
-        for color in COLOR_MAP.values():
-            print(f"{nonland_counts[color]} out of {total_nonlands} non land cards are {color.lower()}")
+        print_analysis(land_counts, nonland_counts, total_lands, total_nonlands)
+        print("\nAnalysis complete!")
+        input("Press Enter to exit...")
     except Exception as e:
         print(f"Error: {e}")
 
