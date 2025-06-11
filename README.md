@@ -10,29 +10,20 @@ This tool counts how many lands and nonland cards of each color are in a Moxfiel
 - Counts nonland cards by color identity
 - Uses the Scryfall API for accurate card data
 - Simple command-line interface
-- Available as standalone executable (no Python installation required!)
+- No Python installation required!
 
-## Quick Start (Executable Version)
+## How to Use
 
-**Easiest way to use - no setup required!**
-
-1. Download the latest executable from the [Releases](../../releases) page
-2. Export your deck from [Moxfield](https://moxfield.com) as a `.txt` file
-3. Run the executable and enter the path to your decklist when prompted
-4. Press Enter to exit when you're done viewing the results
+1. **Download the executable:** Navigate to `DeckAnalyzer/dist/colorcounter.exe` in this repository and download it
+2. **Export your deck from Moxfield:** 
+   - On your deck page, look at the top left area above your card list
+   - Click **"More"** → **"Export"** → **"Download for MTGO"**
+   - This will download a `.txt` file to your computer
+3. **Run the program:** Double-click `colorcounter.exe` 
+4. **Enter the file path:** When prompted, enter the full path to your downloaded `.txt` file
+5. **View results:** The analysis will display, then press Enter to close
 
 *Note: Windows may show a security warning since the executable isn't signed. Click "More info" then "Run anyway" to proceed.*
-
-## Usage (Python Script)
-
-If you prefer to run the Python script directly:
-
-1. Export your deck from [Moxfield](https://moxfield.com) as a `.txt` file
-2. Run the script in your terminal:
-   ```bash
-   python colorcounter.py
-   ```
-3. Enter the path to your decklist when prompted
 
 ## Example Output
 
@@ -52,17 +43,9 @@ Red   :   0 out of  76 nonlands (0.0%)
 Green :   8 out of  76 nonlands (10.5%)
 ```
 
-## Requirements (Python Script Only)
+## File Location
 
-- Python 3.x
-- `requests` library (`pip install requests`)
-
-## How to Export from Moxfield
-
-1. Go to your deck on Moxfield
-2. Click "Export" 
-3. Select "Text" format
-4. Save the file to your computer
+The executable can be found at: `DeckAnalyzer/dist/colorcounter.exe`
 
 ---
 
